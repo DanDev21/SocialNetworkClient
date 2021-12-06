@@ -2,7 +2,10 @@ package com.dan.socialnetwork.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
-val Purple200 = Color(0xFFBB86FC)
-val Purple500 = Color(0xFF6200EE)
-val Purple700 = Color(0xFF3700B3)
-val Teal200 = Color(0xFF03DAC5)
+val Gray_bg = Color(0xFF202020)
+val Gray_sfc = Color(0xFF404040)
+val Gray_on_sfc = Color(0xFF606060)
+val Gray_ht = Color(0xFF6D6D6D)
+val Gray_on_bg = Color(0xFFEEEEEE)
+val Blue_acct = Color(0xFF0062FF)
+val Green_acct = Color(0xFF08FF04)
