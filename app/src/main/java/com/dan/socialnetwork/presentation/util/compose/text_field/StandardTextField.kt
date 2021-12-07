@@ -21,6 +21,8 @@ fun StandardTextField(
 ) {
     TextField(
         value = text,
+        singleLine = true,
+        isError = isError,
         placeholder = {
               Text(
                   text = hint,
@@ -30,7 +32,6 @@ fun StandardTextField(
         keyboardOptions = KeyboardOptions(
             keyboardType = keyBoardType
         ),
-        isError = isError,
         onValueChange = {
             if (it.length <= maxLength) {
                 onValueChange(it)

@@ -33,6 +33,8 @@ fun PasswordTextField(
     }
     TextField(
         value = text,
+        singleLine = true,
+        isError = isError,
         placeholder = {
             Text(
                 text = hint,
@@ -55,7 +57,6 @@ fun PasswordTextField(
                            )
                        }
         },
-        isError = isError,
         onValueChange = {
             if (it.length <= maxLength) {
                 onValueChange(it)
