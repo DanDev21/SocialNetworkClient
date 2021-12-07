@@ -3,4 +3,17 @@
 
         button's text
     <string name="login">Login</string>
+
+        hints
+    <string name="hint_username">Username</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_repeat_password">Password Again</string>
+
+        descriptions
+    <string name="description_password_visible">Display Password</string>
+    <string name="description_password_invisible">Hide Password</string>
+
+        others
+    <string name="question_sign_up">Don\'t have an account yet?</string>
+    <string name="sign_up">Sign Up!</string>
 </resources>
