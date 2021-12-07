@@ -2,10 +2,11 @@ package com.dan.socialnetwork.domain.util
 
 object Constants {
 
-    // durations
-    const val DURATION_SPLASH_SCREEN = 500L
+    object Duration {
+        const val SPLASH_SCREEN = 500L
+    }
 
-    // descriptions
-    const val DESCRIPTION_IMAGE_LOGO = "Logo"
-
+    object Description {
+        const val IMAGE_LOGO = "Logo"
+    }
 }

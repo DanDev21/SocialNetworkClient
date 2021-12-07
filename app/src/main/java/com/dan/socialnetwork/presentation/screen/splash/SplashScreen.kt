@@ -17,11 +17,16 @@ import androidx.navigation.NavController
 import com.dan.socialnetwork.R
 import com.dan.socialnetwork.domain.util.Constants
 import com.dan.socialnetwork.presentation.util.Screen
+import com.dan.socialnetwork.presentation.util.extension.navigate
+import kotlinx.coroutines.CoroutineDispatcher
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.withContext
 
 @Composable
 fun SplashScreen(
-    navController: NavController
+    navController: NavController,
+    dispatcher: CoroutineDispatcher = Dispatchers.Main
 ) {
     Box(
         modifier = Modifier.fillMaxSize(),
@@ -34,25 +39,23 @@ fun SplashScreen(
             OvershootInterpolator(2f)
         }
         LaunchedEffect(true) {
-            scale.animateTo(
-                targetValue = 1f,
-                animationSpec = tween(
-                    durationMillis = 500,
-                    easing = {
-                        overshootInterpolator.getInterpolation(it)
-                    }
+            withContext(dispatcher) {
+                scale.animateTo(
+                    targetValue = 1f,
+                    animationSpec = tween(
+                        durationMillis = 500,
+                        easing = {
+                            overshootInterpolator.getInterpolation(it)
+                        }
+                    )
                 )
-            )
-            delay(Constants.DURATION_SPLASH_SCREEN)
-            navController.navigate(Screen.Login.route) {
-                this.popUpTo(Screen.Login.route) {
-                    this.inclusive = true
-                }
+                delay(Constants.Duration.SPLASH_SCREEN)
+                navController.navigate(Screen.Login.route, true)
             }
         }
         Image(
             painter = painterResource(id = R.drawable.ic_logo),
-            contentDescription = Constants.DESCRIPTION_IMAGE_LOGO,
+            contentDescription = Constants.Description.IMAGE_LOGO,
             modifier = Modifier
                 .scale(scale.value)
         )
