@@ -13,10 +13,13 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.semantics.testTag
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 import com.dan.socialnetwork.R
+import com.dan.socialnetwork.domain.util.Constants
 
 @Composable
 fun PasswordTextField(
@@ -46,11 +49,18 @@ fun PasswordTextField(
         ),
         visualTransformation = getVisualTransformation(displayPassword.value),
         trailingIcon = {
-                       IconButton(onClick = {
-                           displayPassword.value = !displayPassword.value
-                       }) {
+                       IconButton(
+                           modifier = Modifier
+                               .semantics {
+                                   this.testTag = Constants.Test.Tag.BUTTON_TOGGLE_PASSWORD_VISIBILITY
+                               },
+                           onClick = {
+                               displayPassword.value = !displayPassword.value
+                           }
+                       ) {
                            Icon(
                                imageVector = getIconVector(displayPassword.value),
+                               tint = MaterialTheme.colors.primary,
                                contentDescription = stringResource(
                                    id = getIconDescription(displayPassword.value)
                                )
@@ -64,6 +74,9 @@ fun PasswordTextField(
         },
         modifier = modifier
             .fillMaxWidth()
+            .semantics {
+                this.testTag = Constants.Test.Tag.TEXT_FIELD_PASSWORD
+            }
     )
 }
 

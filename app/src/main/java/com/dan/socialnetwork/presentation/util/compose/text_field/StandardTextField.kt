@@ -7,7 +7,10 @@ import androidx.compose.material.Text
 import androidx.compose.material.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.semantics.semantics
+import androidx.compose.ui.semantics.testTag
 import androidx.compose.ui.text.input.KeyboardType
+import com.dan.socialnetwork.domain.util.Constants
 
 @Composable
 fun StandardTextField(
@@ -39,5 +42,8 @@ fun StandardTextField(
         },
         modifier = modifier
             .fillMaxWidth()
+            .semantics {
+                this.testTag = Constants.Test.Tag.TEXT_FIELD_STANDARD
+            }
     )
 }
