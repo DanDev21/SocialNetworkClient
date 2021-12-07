@@ -45,19 +45,19 @@ class PasswordTextFieldTest {
     fun testMaxLengthNotExceeded() {
         val string = "12345"
         composeTestRule
-            .onNodeWithTag(Constants.Test.Tag.TEXT_FIELD_STANDARD)
+            .onNodeWithTag(Constants.Test.Tag.TEXT_FIELD_PASSWORD)
             .performTextClearance()
 
         composeTestRule
-            .onNodeWithTag(Constants.Test.Tag.TEXT_FIELD_STANDARD)
+            .onNodeWithTag(Constants.Test.Tag.TEXT_FIELD_PASSWORD)
             .performTextInput(string)
 
         composeTestRule
-            .onNodeWithTag(Constants.Test.Tag.TEXT_FIELD_STANDARD)
+            .onNodeWithTag(Constants.Test.Tag.TEXT_FIELD_PASSWORD)
             .performTextInput("6")
 
         composeTestRule
-            .onNodeWithTag(Constants.Test.Tag.TEXT_FIELD_STANDARD)
+            .onNodeWithTag(Constants.Test.Tag.TEXT_FIELD_PASSWORD)
             .assertTextEquals(string)
     }
 

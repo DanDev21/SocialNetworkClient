@@ -18,18 +18,14 @@ fun SignUpLink(
 ) {
     Text(
         text = buildAnnotatedString {
-            append(
-                stringResource(id = R.string.question_sign_up)
-            )
+            append(stringResource(R.string.question_sign_up))
             append(" ")
             withStyle(
                 style = SpanStyle(
                     color = MaterialTheme.colors.primary
                 )
             ) {
-                append(
-                    stringResource(id = R.string.sign_up)
-                )
+                append(stringResource(R.string.sign_up))
             }
         },
         modifier = modifier

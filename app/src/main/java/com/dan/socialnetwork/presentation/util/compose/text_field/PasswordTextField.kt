@@ -1,6 +1,7 @@
 package com.dan.socialnetwork.presentation.util.compose.text_field
 
 import androidx.annotation.StringRes
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.*
@@ -8,8 +9,6 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Visibility
 import androidx.compose.material.icons.filled.VisibilityOff
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
@@ -20,6 +19,7 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 import com.dan.socialnetwork.R
 import com.dan.socialnetwork.domain.util.Constants
+import com.dan.socialnetwork.presentation.util.compose.ErrorText
 
 @Composable
 fun PasswordTextField(
@@ -27,57 +27,65 @@ fun PasswordTextField(
     text: String = "",
     hint: String = stringResource(id = R.string.hint_password),
     maxLength: Int = 20,
-    isError: Boolean = false,
+    errorMessage: String = "",
     keyBoardType: KeyboardType = KeyboardType.Password,
+    showPassword: Boolean = false,
+    onTogglePasswordVisibility: (Boolean) -> Unit = {},
     onValueChange: (String) -> Unit
 ) {
-    val displayPassword = remember {
-        mutableStateOf(false)
-    }
-    TextField(
-        value = text,
-        singleLine = true,
-        isError = isError,
-        placeholder = {
-            Text(
-                text = hint,
-                style = MaterialTheme.typography.body1
-            )
-        },
-        keyboardOptions = KeyboardOptions(
-            keyboardType = keyBoardType
-        ),
-        visualTransformation = getVisualTransformation(displayPassword.value),
-        trailingIcon = {
-                       IconButton(
-                           modifier = Modifier
-                               .semantics {
-                                   this.testTag = Constants.Test.Tag.BUTTON_TOGGLE_PASSWORD_VISIBILITY
-                               },
-                           onClick = {
-                               displayPassword.value = !displayPassword.value
-                           }
-                       ) {
-                           Icon(
-                               imageVector = getIconVector(displayPassword.value),
-                               tint = MaterialTheme.colors.primary,
-                               contentDescription = stringResource(
-                                   id = getIconDescription(displayPassword.value)
-                               )
-                           )
-                       }
-        },
-        onValueChange = {
-            if (it.length <= maxLength) {
-                onValueChange(it)
-            }
-        },
-        modifier = modifier
+    Column(
+        modifier = Modifier
             .fillMaxWidth()
-            .semantics {
-                this.testTag = Constants.Test.Tag.TEXT_FIELD_PASSWORD
-            }
-    )
+    ) {
+        TextField(
+            value = text,
+            singleLine = true,
+            isError = errorMessage != "",
+            placeholder = {
+                Text(
+                    text = hint,
+                    style = MaterialTheme.typography.body1
+                )
+            },
+            keyboardOptions = KeyboardOptions(
+                keyboardType = keyBoardType
+            ),
+            visualTransformation = getVisualTransformation(showPassword),
+            trailingIcon = {
+                IconButton(
+                    modifier = Modifier
+                        .semantics {
+                            this.testTag = Constants.Test.Tag.BUTTON_TOGGLE_PASSWORD_VISIBILITY
+                        },
+                    onClick = {
+                        onTogglePasswordVisibility(!showPassword)
+                    }
+                ) {
+                    Icon(
+                        imageVector = getIconVector(showPassword),
+                        tint = MaterialTheme.colors.primary,
+                        contentDescription = stringResource(
+                            id = getIconDescription(showPassword)
+                        )
+                    )
+                }
+            },
+            onValueChange = {
+                if (it.length <= maxLength) {
+                    onValueChange(it)
+                }
+            },
+            modifier = modifier
+                .fillMaxWidth()
+                .semantics {
+                    this.testTag = Constants.Test.Tag.TEXT_FIELD_PASSWORD
+                }
+        )
+        if (errorMessage.isNotEmpty()) {
+            ErrorText(message = errorMessage)
+        }
+    }
+
 }
 
 private fun getIconVector(visible: Boolean): ImageVector =

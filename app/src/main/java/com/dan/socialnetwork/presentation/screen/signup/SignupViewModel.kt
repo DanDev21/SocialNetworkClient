@@ -1,13 +1,11 @@
-package com.dan.socialnetwork.presentation.screen.login.viewmodel
+package com.dan.socialnetwork.presentation.screen.signup
 
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
-import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
-@HiltViewModel
-class LoginViewModel @Inject constructor() : ViewModel() {
+class SignupViewModel @Inject constructor() : ViewModel() {
 
     private val _username = mutableStateOf("")
     val username: State<String> = _username
