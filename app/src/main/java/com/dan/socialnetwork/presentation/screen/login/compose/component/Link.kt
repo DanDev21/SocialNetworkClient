@@ -5,27 +5,27 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.withStyle
-import com.dan.socialnetwork.R
 
 @Composable
-fun SignUpLink(
+fun Link(
     modifier: Modifier = Modifier,
+    text: String,
+    link: String,
     onClick: () -> Unit,
 ) {
     Text(
         text = buildAnnotatedString {
-            append(stringResource(R.string.question_sign_up))
+            append(text)
             append(" ")
             withStyle(
                 style = SpanStyle(
                     color = MaterialTheme.colors.primary
                 )
             ) {
-                append(stringResource(R.string.sign_up))
+                append(link)
             }
         },
         modifier = modifier

@@ -30,6 +30,7 @@ fun PasswordTextField(
     errorMessage: String = "",
     keyBoardType: KeyboardType = KeyboardType.Password,
     showPassword: Boolean = false,
+    letUserToggleVisibility: Boolean = true,
     onTogglePasswordVisibility: (Boolean) -> Unit = {},
     onValueChange: (String) -> Unit
 ) {
@@ -52,22 +53,24 @@ fun PasswordTextField(
             ),
             visualTransformation = getVisualTransformation(showPassword),
             trailingIcon = {
-                IconButton(
-                    modifier = Modifier
-                        .semantics {
-                            this.testTag = Constants.Test.Tag.BUTTON_TOGGLE_PASSWORD_VISIBILITY
-                        },
-                    onClick = {
-                        onTogglePasswordVisibility(!showPassword)
-                    }
-                ) {
-                    Icon(
-                        imageVector = getIconVector(showPassword),
-                        tint = MaterialTheme.colors.primary,
-                        contentDescription = stringResource(
-                            id = getIconDescription(showPassword)
+                if (letUserToggleVisibility) {
+                    IconButton(
+                        modifier = Modifier
+                            .semantics {
+                                this.testTag = Constants.Test.Tag.BUTTON_TOGGLE_PASSWORD_VISIBILITY
+                            },
+                        onClick = {
+                            onTogglePasswordVisibility(!showPassword)
+                        }
+                    ) {
+                        Icon(
+                            imageVector = getIconVector(showPassword),
+                            tint = MaterialTheme.colors.primary,
+                            contentDescription = stringResource(
+                                id = getIconDescription(showPassword)
+                            )
                         )
-                    )
+                    }
                 }
             },
             onValueChange = {

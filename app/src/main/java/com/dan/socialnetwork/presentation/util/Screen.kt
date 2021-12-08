@@ -2,7 +2,7 @@ package com.dan.socialnetwork.presentation.util
 
 sealed class Screen(val route: String) {
     object Splash : Screen("splash")
-    object Login : Screen("login")
+    object Signin : Screen("login")
     object Signup : Screen("signup")
     object MainFeed : Screen("main")
     object PostDetails : Screen("post_details")

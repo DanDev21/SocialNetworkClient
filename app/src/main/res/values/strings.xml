@@ -2,9 +2,12 @@
     <string name="app_name">SocialNetwork</string>
 
         button's text
-    <string name="login">Login</string>
+    <string name="pursue">Continue</string>
+    <string name="sign_in">Sign In</string>
+    <string name="sign_up">Sign Up</string>
 
         hints
+    <string name="hint_email">Email</string>
     <string name="hint_username">Username</string>
     <string name="hint_password">Password</string>
     <string name="hint_repeat_password">Password Again</string>
@@ -15,5 +18,5 @@
 
         others
     <string name="question_sign_up">Don\'t have an account yet?</string>
-    <string name="sign_up">Sign Up!</string>
+    <string name="question_sign_in">Already have an account?</string>
 </resources>

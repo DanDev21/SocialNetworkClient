@@ -12,7 +12,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.dan.socialnetwork.R
 import com.dan.socialnetwork.presentation.screen.login.compose.component.Link
-import com.dan.socialnetwork.presentation.screen.login.viewmodel.LoginViewModel
+import com.dan.socialnetwork.presentation.screen.login.viewmodel.SignInViewModel
 import com.dan.socialnetwork.presentation.ui.theme.Size_16
 import com.dan.socialnetwork.presentation.ui.theme.Size_24
 import com.dan.socialnetwork.presentation.util.Screen
@@ -20,9 +20,9 @@ import com.dan.socialnetwork.presentation.util.compose.text_field.PasswordTextFi
 import com.dan.socialnetwork.presentation.util.compose.text_field.StandardTextField
 
 @Composable
-fun LoginScreen(
+fun SignInScreen(
     navController: NavController,
-    viewModel: LoginViewModel = hiltViewModel()
+    viewModel: SignInViewModel = hiltViewModel()
 ) {
     Box(
         modifier = Modifier

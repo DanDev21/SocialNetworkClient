@@ -1,4 +1,4 @@
-package com.dan.socialnetwork.presentation.screen.signup
+package com.dan.socialnetwork.presentation.screen.signup.compose
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Button

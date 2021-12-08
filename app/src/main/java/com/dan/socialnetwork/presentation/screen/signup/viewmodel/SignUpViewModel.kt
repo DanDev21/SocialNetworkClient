@@ -1,11 +1,11 @@
-package com.dan.socialnetwork.presentation.screen.signup
+package com.dan.socialnetwork.presentation.screen.signup.viewmodel
 
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import javax.inject.Inject
 
-class SignupViewModel @Inject constructor() : ViewModel() {
+class SignUpViewModel @Inject constructor() : ViewModel() {
 
     private val _email = mutableStateOf("")
     val email: State<String> = _email
