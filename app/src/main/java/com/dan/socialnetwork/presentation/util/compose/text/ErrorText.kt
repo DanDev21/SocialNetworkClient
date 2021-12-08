@@ -1,4 +1,4 @@
-package com.dan.socialnetwork.presentation.util.compose
+package com.dan.socialnetwork.presentation.util.compose.text
 
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material.MaterialTheme

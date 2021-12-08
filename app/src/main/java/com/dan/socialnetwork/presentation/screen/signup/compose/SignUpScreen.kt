@@ -11,7 +11,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.dan.socialnetwork.R
-import com.dan.socialnetwork.presentation.screen.login.compose.component.Link
+import com.dan.socialnetwork.presentation.util.compose.text.Link
 import com.dan.socialnetwork.presentation.screen.signup.viewmodel.SignUpViewModel
 import com.dan.socialnetwork.presentation.ui.theme.Size_16
 import com.dan.socialnetwork.presentation.ui.theme.Size_24

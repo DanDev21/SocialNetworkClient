@@ -1,4 +1,4 @@
-package com.dan.socialnetwork.presentation.screen.login.compose.component
+package com.dan.socialnetwork.presentation.util.compose.text
 
 import androidx.compose.foundation.clickable
 import androidx.compose.material.MaterialTheme

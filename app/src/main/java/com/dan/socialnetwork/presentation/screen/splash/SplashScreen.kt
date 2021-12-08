@@ -13,6 +13,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.scale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavController
 import com.dan.socialnetwork.R
 import com.dan.socialnetwork.domain.util.Constants
@@ -49,13 +50,13 @@ fun SplashScreen(
                         }
                     )
                 )
-                delay(Constants.Duration.SPLASH_SCREEN)
+                delay(Constants.Time.SPLASH_SCREEN)
                 navController.navigate(Screen.Signin.route, true)
             }
         }
         Image(
             painter = painterResource(id = R.drawable.ic_logo),
-            contentDescription = Constants.Description.IMAGE_LOGO,
+            contentDescription = stringResource(R.string.description_logo),
             modifier = Modifier
                 .scale(scale.value)
         )

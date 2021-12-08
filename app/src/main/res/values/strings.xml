@@ -13,10 +13,21 @@
     <string name="hint_repeat_password">Password Again</string>
 
         descriptions
+    <string name="description_logo">Logo</string>
+    <string name="description_like">Like</string>
+    <string name="description_unlike">Unlike</string>
+    <string name="description_comment">Comment</string>
+    <string name="description_share">Share</string>
+    <string name="description_post_image">Post Image</string>
+    <string name="description_profile_picture">Profile Picture</string>
     <string name="description_password_visible">Display Password</string>
     <string name="description_password_invisible">Hide Password</string>
 
         others
     <string name="question_sign_up">Don\'t have an account yet?</string>
     <string name="question_sign_in">Already have an account?</string>
+
+        with arguments
+    <string name="x_likes">%d likes</string>
+    <string name="x_comments">%d comments</string>
 </resources>

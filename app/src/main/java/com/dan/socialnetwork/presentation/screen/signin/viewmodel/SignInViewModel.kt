@@ -1,4 +1,4 @@
-package com.dan.socialnetwork.presentation.screen.login.viewmodel
+package com.dan.socialnetwork.presentation.screen.signin.viewmodel
 
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf

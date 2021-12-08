@@ -1,4 +1,4 @@
-package com.dan.socialnetwork.presentation.screen.login.compose
+package com.dan.socialnetwork.presentation.screen.signin.compose
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Button
@@ -11,13 +11,14 @@ import androidx.compose.ui.res.stringResource
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.dan.socialnetwork.R
-import com.dan.socialnetwork.presentation.screen.login.compose.component.Link
-import com.dan.socialnetwork.presentation.screen.login.viewmodel.SignInViewModel
+import com.dan.socialnetwork.presentation.util.compose.text.Link
+import com.dan.socialnetwork.presentation.screen.signin.viewmodel.SignInViewModel
 import com.dan.socialnetwork.presentation.ui.theme.Size_16
 import com.dan.socialnetwork.presentation.ui.theme.Size_24
 import com.dan.socialnetwork.presentation.util.Screen
 import com.dan.socialnetwork.presentation.util.compose.text_field.PasswordTextField
 import com.dan.socialnetwork.presentation.util.compose.text_field.StandardTextField
+import com.dan.socialnetwork.presentation.util.extension.navigate
 
 @Composable
 fun SignInScreen(
@@ -62,7 +63,7 @@ fun SignInScreen(
                 modifier = Modifier
                     .align(Alignment.End),
                 onClick = {
-                    
+                    navController.navigate(Screen.MainFeed.route, true)
                 }
             ) {
                 Text(

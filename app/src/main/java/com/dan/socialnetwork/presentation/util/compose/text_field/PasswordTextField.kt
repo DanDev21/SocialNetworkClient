@@ -19,7 +19,7 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 import com.dan.socialnetwork.R
 import com.dan.socialnetwork.domain.util.Constants
-import com.dan.socialnetwork.presentation.util.compose.ErrorText
+import com.dan.socialnetwork.presentation.util.compose.text.ErrorText
 
 @Composable
 fun PasswordTextField(

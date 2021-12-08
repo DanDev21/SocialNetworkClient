@@ -2,12 +2,13 @@ package com.dan.socialnetwork.domain.util
 
 object Constants {
 
-    object Duration {
+    object Time {
         const val SPLASH_SCREEN = 500L
     }
 
-    object Description {
-        const val IMAGE_LOGO = "Logo"
+    object Max {
+
+        const val DESCRIPTION_LINES = 3
     }
 
     object Test {

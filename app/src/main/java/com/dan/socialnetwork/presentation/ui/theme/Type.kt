@@ -41,4 +41,10 @@ val Typography = Typography(
         fontSize = 24.sp,
         color = Gray_on_bg
     ),
+    h3 = TextStyle(
+        fontFamily = quicksand,
+        fontWeight = FontWeight.Bold,
+        fontSize = Text_16,
+        color = Gray_on_bg
+    )
 )
