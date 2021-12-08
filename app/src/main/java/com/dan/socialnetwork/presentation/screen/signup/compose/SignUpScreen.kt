@@ -1,4 +1,4 @@
-package com.dan.socialnetwork.presentation.screen.login.compose
+package com.dan.socialnetwork.presentation.screen.signup
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Button
@@ -11,8 +11,8 @@ import androidx.compose.ui.res.stringResource
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.dan.socialnetwork.R
-import com.dan.socialnetwork.presentation.screen.login.compose.component.SignUpLink
-import com.dan.socialnetwork.presentation.screen.login.viewmodel.LoginViewModel
+import com.dan.socialnetwork.presentation.screen.login.compose.component.Link
+import com.dan.socialnetwork.presentation.screen.signup.viewmodel.SignUpViewModel
 import com.dan.socialnetwork.presentation.ui.theme.Size_16
 import com.dan.socialnetwork.presentation.ui.theme.Size_24
 import com.dan.socialnetwork.presentation.util.Screen
@@ -20,36 +20,50 @@ import com.dan.socialnetwork.presentation.util.compose.text_field.PasswordTextFi
 import com.dan.socialnetwork.presentation.util.compose.text_field.StandardTextField
 
 @Composable
-fun LoginScreen(
+fun SignUpScreen(
     navController: NavController,
-    viewModel: LoginViewModel = hiltViewModel()
+    viewModel: SignUpViewModel = hiltViewModel()
 ) {
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .padding(Size_16)
+            .padding(Size_24)
             .padding(
                 bottom = Size_24
             )
     ) {
         Column(
-            modifier=  Modifier
-                .fillMaxSize(),
+            modifier= Modifier
+                .fillMaxSize()
+                .padding(Size_24),
             verticalArrangement = Arrangement.Center
         ) {
             Text(
-                text = stringResource(R.string.login),
+                text = stringResource(R.string.sign_up),
                 style = MaterialTheme.typography.h1,
                 color = MaterialTheme.colors.onBackground,
             )
+
             Spacer(modifier = Modifier.height(Size_16))
+
+            StandardTextField(
+                text = viewModel.email.value,
+                hint = stringResource(R.string.hint_email),
+                onValueChange = viewModel::setEmail,
+                errorMessage = viewModel.emailErrorMessage.value
+            )
+
+            Spacer(modifier = Modifier.height(Size_16))
+
             StandardTextField(
                 text = viewModel.username.value,
                 hint = stringResource(R.string.hint_username),
                 onValueChange = viewModel::setUsername,
                 errorMessage = viewModel.usernameErrorMessage.value
             )
+
             Spacer(modifier = Modifier.height(Size_16))
+
             PasswordTextField(
                 text = viewModel.password.value,
                 onValueChange = viewModel::setPassword,
@@ -57,26 +71,41 @@ fun LoginScreen(
                 onTogglePasswordVisibility = viewModel::setShowPassword,
                 errorMessage = viewModel.passwordErrorMessage.value
             )
+
             Spacer(modifier = Modifier.height(Size_16))
+
+            PasswordTextField(
+                text = viewModel.passwordConfirmation.value,
+                hint = stringResource(R.string.hint_repeat_password),
+                onValueChange = viewModel::setPasswordConfirmation,
+                showPassword = viewModel.showPassword.value,
+                letUserToggleVisibility = false,
+                errorMessage = viewModel.passwordErrorMessage.value
+            )
+
+            Spacer(modifier = Modifier.height(Size_16))
+
             Button(
                 modifier = Modifier
                     .align(Alignment.End),
                 onClick = {
-                    
+
                 }
             ) {
                 Text(
-                    text = stringResource(R.string.login),
+                    text = stringResource(R.string.pursue),
                     color = MaterialTheme.colors.onPrimary
                 )
             }
         }
-        SignUpLink(
-            modifier = Modifier
-                .align(Alignment.BottomCenter),
+        Link(
+            text = stringResource(R.string.question_sign_in),
+            link = stringResource(R.string.sign_in),
             onClick = {
-                navController.navigate(Screen.Signup.route)
-            }
+                navController.navigate(Screen.Signin.route)
+            },
+            modifier = Modifier
+                .align(Alignment.BottomCenter)
         )
     }
 }
