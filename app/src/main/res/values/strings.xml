@@ -13,6 +13,10 @@
     <string name="hint_repeat_password">Password Again</string>
 
         descriptions
+    <string name="description_home">Home</string>
+    <string name="description_chats">Home</string>
+    <string name="description_profile">Home</string>
+    <string name="description_activity">Home</string>
     <string name="description_logo">Logo</string>
     <string name="description_like">Like</string>
     <string name="description_unlike">Unlike</string>
@@ -30,4 +34,5 @@
         with arguments
     <string name="x_likes">%d likes</string>
     <string name="x_comments">%d comments</string>
+    <string name="read_more">Read more</string>
 </resources>

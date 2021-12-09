@@ -34,7 +34,8 @@ fun EngagementButtons(
         verticalAlignment = Alignment.CenterVertically
     ) {
         IconButton(
-            modifier = Modifier.size(iconsSize),
+            modifier = Modifier
+                .size(iconsSize),
             onClick = {
                 like(!isLiked)
             }
@@ -49,14 +50,14 @@ fun EngagementButtons(
         Spacer(modifier = Modifier.width(Size_16))
 
         IconButton(
-            modifier = Modifier.size(iconsSize),
+            modifier = Modifier
+                .size(iconsSize),
             onClick = {
                 comment()
             }
         ) {
             Icon(
                 imageVector = Icons.Filled.Comment,
-                tint = Gray_on_bg,
                 contentDescription = stringResource(R.string.description_comment)
             )
         }
@@ -64,14 +65,14 @@ fun EngagementButtons(
         Spacer(modifier = Modifier.width(Size_16))
 
         IconButton(
-            modifier = Modifier.size(iconsSize),
+            modifier = Modifier
+                .size(iconsSize),
             onClick = {
                 share()
             }
         ) {
             Icon(
                 imageVector = Icons.Filled.Share,
-                tint = Gray_on_bg,
                 contentDescription = stringResource(R.string.description_share)
             )
         }

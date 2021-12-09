@@ -1,9 +1,9 @@
 package com.dan.socialnetwork.presentation.util.compose.navigation
 
 import androidx.compose.runtime.Composable
+import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import androidx.navigation.compose.rememberNavController
 import com.dan.socialnetwork.presentation.screen.signin.compose.SignInScreen
 import com.dan.socialnetwork.presentation.screen.main_feed.compose.MainFeedScreen
 import com.dan.socialnetwork.presentation.screen.signup.compose.SignUpScreen
@@ -11,8 +11,9 @@ import com.dan.socialnetwork.presentation.screen.splash.SplashScreen
 import com.dan.socialnetwork.presentation.util.Screen
 
 @Composable
-fun Navigation() {
-    val navController = rememberNavController()
+fun Navigation(
+    navController: NavHostController
+) {
     NavHost(
         navController = navController,
         startDestination = Screen.Splash.route
