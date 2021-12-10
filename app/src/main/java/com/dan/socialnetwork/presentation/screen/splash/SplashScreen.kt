@@ -51,7 +51,7 @@ fun SplashScreen(
                     )
                 )
                 delay(Constants.Time.SPLASH_SCREEN)
-                navController.navigate(Screen.Signin.route, true)
+                navController.navigate(Screen.SignIn.route, true)
             }
         }
         Image(

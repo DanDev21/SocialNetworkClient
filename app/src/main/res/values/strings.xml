@@ -14,9 +14,9 @@
 
         descriptions
     <string name="description_home">Home</string>
-    <string name="description_chats">Home</string>
-    <string name="description_profile">Home</string>
-    <string name="description_activity">Home</string>
+    <string name="description_chats">Chats</string>
+    <string name="description_profile">Profile</string>
+    <string name="description_activity">Activity</string>
     <string name="description_logo">Logo</string>
     <string name="description_like">Like</string>
     <string name="description_unlike">Unlike</string>
@@ -26,6 +26,7 @@
     <string name="description_profile_picture">Profile Picture</string>
     <string name="description_password_visible">Display Password</string>
     <string name="description_password_invisible">Hide Password</string>
+    <string name="description_create_post">Create new post</string>
 
         others
     <string name="question_sign_up">Don\'t have an account yet?</string>
@@ -35,4 +36,5 @@
     <string name="x_likes">%d likes</string>
     <string name="x_comments">%d comments</string>
     <string name="read_more">Read more</string>
+    <string name="empty" />
 </resources>

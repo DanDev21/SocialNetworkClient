@@ -1,7 +1,7 @@
 package com.dan.socialnetwork.presentation.util.extension
 
 import androidx.navigation.NavController
-import com.dan.socialnetwork.presentation.util.BottomNavigationItem
+import com.dan.socialnetwork.presentation.util.compose.navigation.BottomNavigationItem
 
 fun NavController.navigate(route: String, shouldPop: Boolean = false) {
     if (shouldPop) {

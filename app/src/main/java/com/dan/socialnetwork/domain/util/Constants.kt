@@ -4,6 +4,7 @@ object Constants {
 
     object Time {
         const val SPLASH_SCREEN = 500L
+        const val BOTTOM_NAVIGATION_ITEM_LINE_ANIMATION = 300
     }
 
     object Max {

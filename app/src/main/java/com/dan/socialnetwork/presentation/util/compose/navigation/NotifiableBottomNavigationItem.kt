@@ -1,5 +1,7 @@
 package com.dan.socialnetwork.presentation.util.compose.navigation
 
+import androidx.compose.animation.core.animateFloatAsState
+import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
@@ -20,6 +22,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
+import com.dan.socialnetwork.domain.util.Constants
 import com.dan.socialnetwork.presentation.ui.theme.Gray_ht
 import com.dan.socialnetwork.presentation.ui.theme.Size_5
 import com.dan.socialnetwork.presentation.ui.theme.Text_10
@@ -33,7 +36,7 @@ fun RowScope.NotifiableBottomNavigationItem(
     enabled: Boolean = true,
     selected: Boolean = false,
     icon: ImageVector,
-    iconSize: Dp = 37.dp,
+    iconSize: Dp = 30.dp,
     contentDescription: String,
     selectedColor: Color = MaterialTheme.colors.primary,
     unselectedColor: Color = Gray_ht,
@@ -43,6 +46,14 @@ fun RowScope.NotifiableBottomNavigationItem(
     if (alerts < 0) {
         throw IllegalArgumentException("illegal state: alerts < 0!")
     }
+
+    val bottomLineLength = animateFloatAsState(
+        targetValue = if (selected) 1f else 0f,
+        animationSpec = tween(
+            durationMillis = Constants.Time.BOTTOM_NAVIGATION_ITEM_LINE_ANIMATION
+        )
+    )
+
     BottomNavigationItem(
         enabled = enabled,
         selected = selected,
@@ -59,11 +70,11 @@ fun RowScope.NotifiableBottomNavigationItem(
                                 strokeWidth = 5.dp.toPx(),
                                 cap = StrokeCap.Round,
                                 start = Offset(
-                                    x = 40f,
+                                    x = size.width / 2f - bottomLineLength.value * 15.dp.toPx(),
                                     y = size.height
                                 ),
                                 end = Offset(
-                                    x = size.width - 40,
+                                    x = size.width / 2f + bottomLineLength.value * 15.dp.toPx(),
                                     y = size.height
                                 ),
                             )
@@ -71,14 +82,16 @@ fun RowScope.NotifiableBottomNavigationItem(
                     }
                     .padding(Size_5)
             ) {
-                Icon(
-                    imageVector = icon,
-                    contentDescription = contentDescription,
-                    tint = if (selected) selectedColor else unselectedColor,
-                    modifier = Modifier
-                        .size(iconSize)
-                        .align(Alignment.Center)
-                )
+                if (enabled) {
+                    Icon(
+                        imageVector = icon,
+                        contentDescription = contentDescription,
+                        tint = if (selected) selectedColor else unselectedColor,
+                        modifier = Modifier
+                            .size(iconSize)
+                            .align(Alignment.Center)
+                    )
+                }
 
                 if (alerts > 0) {
                     Text(

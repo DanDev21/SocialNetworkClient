@@ -5,31 +5,27 @@ import androidx.compose.material.BottomAppBar
 import androidx.compose.material.BottomNavigation
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.outlined.Home
 import androidx.compose.material.icons.outlined.Message
 import androidx.compose.material.icons.outlined.Notifications
 import androidx.compose.material.icons.outlined.Person
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import androidx.navigation.NavBackStackEntry
 import androidx.navigation.NavController
-import androidx.navigation.compose.currentBackStackEntryAsState
 import com.dan.socialnetwork.R
-import com.dan.socialnetwork.presentation.util.BottomNavigationItem
 import com.dan.socialnetwork.presentation.util.Screen
-import com.dan.socialnetwork.presentation.util.extension.navigate
 
 @Composable
 fun BottomNavigationView(
     modifier: Modifier = Modifier,
     navController: NavController,
+    visible: Boolean = true,
     items: List<BottomNavigationItem> = defaultItems
 ) {
-    val navBackStackEntry by navController.currentBackStackEntryAsState()
-    if (defaultVisibilityRule(navBackStackEntry)) {
+    if (visible) {
         BottomAppBar(
             backgroundColor = MaterialTheme.colors.surface,
             cutoutShape = CircleShape,
@@ -42,10 +38,10 @@ fun BottomNavigationView(
                         icon = item.icon,
                         selected = item.route == navController.currentDestination?.route,
                         contentDescription = stringResource(item.contentDescriptionId),
-                        alerts = item.alerts,
-                        enabled = true
+                        enabled = item.route != Screen.Empty.route,
+                        alerts = item.alerts
                     ) {
-                        navController.navigate(item)
+                        navController.navigate(item.route)
                     }
                 }
             }
@@ -57,8 +53,7 @@ private val defaultItems = listOf(
     BottomNavigationItem(
         route = Screen.MainFeed.route,
         icon = Icons.Outlined.Home,
-        contentDescriptionId = R.string.description_home,
-        alerts = 12
+        contentDescriptionId = R.string.description_home
     ),
     BottomNavigationItem(
         route = Screen.Chats.route,
@@ -66,10 +61,14 @@ private val defaultItems = listOf(
         contentDescriptionId = R.string.description_chats
     ),
     BottomNavigationItem(
+        route = Screen.Empty.route,
+        icon = Icons.Default.Delete,
+        contentDescriptionId = R.string.empty
+    ),
+    BottomNavigationItem(
         route = Screen.Activity.route,
         icon = Icons.Outlined.Notifications,
-        contentDescriptionId = R.string.description_activity,
-        alerts = 150
+        contentDescriptionId = R.string.description_activity
     ),
     BottomNavigationItem(
         route = Screen.Profile.route,
@@ -77,12 +76,3 @@ private val defaultItems = listOf(
         contentDescriptionId = R.string.description_profile
     ),
 )
-
-private fun defaultVisibilityRule(currentBackStackEntry: NavBackStackEntry?): Boolean =
-    currentBackStackEntry?.destination?.route in listOf(
-        Screen.MainFeed.route,
-        Screen.Chats.route,
-        Screen.Activity.route,
-        Screen.Profile.route
-    )
-

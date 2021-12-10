@@ -1,4 +1,4 @@
-package com.dan.socialnetwork.presentation.util
+package com.dan.socialnetwork.presentation.util.compose.navigation
 
 import androidx.annotation.StringRes
 import androidx.compose.ui.graphics.vector.ImageVector

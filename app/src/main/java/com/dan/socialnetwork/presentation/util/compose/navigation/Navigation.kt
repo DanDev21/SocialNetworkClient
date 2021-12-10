@@ -6,6 +6,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.dan.socialnetwork.presentation.screen.activity.compose.ActivityScreen
 import com.dan.socialnetwork.presentation.screen.chats.compose.ChatsScreen
+import com.dan.socialnetwork.presentation.screen.create_post.compose.CreatePostScreen
 import com.dan.socialnetwork.presentation.screen.signin.compose.SignInScreen
 import com.dan.socialnetwork.presentation.screen.main_feed.compose.MainFeedScreen
 import com.dan.socialnetwork.presentation.screen.profile.compose.ProfileScreen
@@ -24,7 +25,7 @@ fun Navigation(
         composable(Screen.Splash.route) {
             SplashScreen(navController)
         }
-        composable(Screen.Signin.route) {
+        composable(Screen.SignIn.route) {
             SignInScreen(navController)
         }
         composable(Screen.Signup.route) {
@@ -41,6 +42,9 @@ fun Navigation(
         }
         composable(Screen.Profile.route) {
             ProfileScreen(navController)
+        }
+        composable(Screen.CreatePost.route) {
+            CreatePostScreen()
         }
     }
 }

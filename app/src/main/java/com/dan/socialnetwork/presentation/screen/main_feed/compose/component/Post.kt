@@ -76,7 +76,8 @@ fun Post(
                     likes = post.likes,
                     comments = post.comments,
                     textStyle = MaterialTheme.typography.h3,
-                    modifier = Modifier.fillMaxWidth()
+                    modifier = Modifier
+                        .fillMaxWidth()
                 )
             }
         }

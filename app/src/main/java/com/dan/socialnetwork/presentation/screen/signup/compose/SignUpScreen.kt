@@ -102,7 +102,7 @@ fun SignUpScreen(
             text = stringResource(R.string.question_sign_in),
             link = stringResource(R.string.sign_in),
             onClick = {
-                navController.navigate(Screen.Signin.route)
+                navController.navigate(Screen.SignIn.route)
             },
             modifier = Modifier
                 .align(Alignment.BottomCenter)
