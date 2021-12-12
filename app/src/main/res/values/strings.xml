@@ -9,6 +9,7 @@
         hints
     <string name="hint_email">Email</string>
     <string name="hint_username">Username</string>
+    <string name="hint_username_or_email">Username / Email</string>
     <string name="hint_password">Password</string>
     <string name="hint_repeat_password">Password Again</string>
 
@@ -24,7 +25,7 @@
     <string name="description_share">Share</string>
     <string name="description_post_image">Post Image</string>
     <string name="description_profile_picture">Profile Picture</string>
-    <string name="description_password_visible">Display Password</string>
+    <string name="description_password_visible">Show Password</string>
     <string name="description_password_invisible">Hide Password</string>
     <string name="description_create_post">Create new post</string>
 

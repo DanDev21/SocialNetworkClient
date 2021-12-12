@@ -22,10 +22,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.dan.socialnetwork.domain.util.Constants
+import com.dan.socialnetwork.presentation.util.Constants
 import com.dan.socialnetwork.presentation.ui.theme.Gray_ht
-import com.dan.socialnetwork.presentation.ui.theme.Size_5
-import com.dan.socialnetwork.presentation.ui.theme.Text_10
 import java.lang.IllegalArgumentException
 import kotlin.jvm.Throws
 
@@ -64,7 +62,7 @@ fun RowScope.NotifiableBottomNavigationItem(
                 modifier = Modifier
                     .fillMaxSize()
                     .drawBehind {
-                        if (selected) {
+                        if (bottomLineLength.value > 0) {
                             drawLine(
                                 color = selectedColor,
                                 strokeWidth = 5.dp.toPx(),
@@ -80,7 +78,7 @@ fun RowScope.NotifiableBottomNavigationItem(
                             )
                         }
                     }
-                    .padding(Size_5)
+                    .padding(Constants.Size.EXTRA_SMALL)
             ) {
                 if (enabled) {
                     Icon(
@@ -97,7 +95,7 @@ fun RowScope.NotifiableBottomNavigationItem(
                     Text(
                         text = getNotificationText(alerts),
                         color = MaterialTheme.colors.onPrimary,
-                        fontSize = Text_10,
+                        fontSize = Constants.Size.Text.EXTRA_SMALL,
                         textAlign = TextAlign.Center,
                         fontWeight = FontWeight.Bold,
                         modifier = Modifier

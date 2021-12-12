@@ -3,6 +3,7 @@ package com.dan.socialnetwork.presentation.screen.main_feed.compose
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavController
 import com.dan.socialnetwork.presentation.screen.main_feed.compose.component.Post
+import com.dan.socialnetwork.presentation.util.Screen
 
 @Composable
 fun MainFeedScreen(
@@ -21,6 +22,9 @@ fun MainFeedScreen(
                     "asdmdasmdasko",
             12,
             34
-        )
+        ),
+        onClick = {
+            navController.navigate(Screen.PostDetails.route)
+        }
     )
 }

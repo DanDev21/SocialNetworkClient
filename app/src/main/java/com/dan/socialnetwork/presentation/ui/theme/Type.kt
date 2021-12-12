@@ -7,6 +7,7 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 import com.dan.socialnetwork.R
+import com.dan.socialnetwork.presentation.util.Constants
 
 private val quicksand = FontFamily(
     Font(R.font.quicksand_light, FontWeight.Light),
@@ -44,7 +45,7 @@ val Typography = Typography(
     h3 = TextStyle(
         fontFamily = quicksand,
         fontWeight = FontWeight.Bold,
-        fontSize = Text_16,
+        fontSize = Constants.Size.Text.MEDIUM,
         color = Gray_on_bg
     )
 )

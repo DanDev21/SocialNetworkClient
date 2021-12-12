@@ -6,5 +6,5 @@ data class Post(
     val profilePictureUrl: String,
     val description: String,
     val likes: Int,
-    val comments: Int,
+    val comments: Int
 )

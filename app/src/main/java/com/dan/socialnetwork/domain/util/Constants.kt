@@ -1,23 +1,5 @@
 package com.dan.socialnetwork.domain.util
 
-object Constants {
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 
-    object Time {
-        const val SPLASH_SCREEN = 500L
-        const val BOTTOM_NAVIGATION_ITEM_LINE_ANIMATION = 300
-    }
-
-    object Max {
-
-        const val DESCRIPTION_LINES = 3
-    }
-
-    object Test {
-
-        object Tag {
-            const val TEXT_FIELD_STANDARD = "text_field_standard"
-            const val TEXT_FIELD_PASSWORD = "text_field_password"
-            const val BUTTON_TOGGLE_PASSWORD_VISIBILITY = "button_toggle_password_visibility"
-        }
-    }
-}

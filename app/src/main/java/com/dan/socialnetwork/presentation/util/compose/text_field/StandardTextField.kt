@@ -11,7 +11,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.semantics.testTag
 import androidx.compose.ui.text.input.KeyboardType
-import com.dan.socialnetwork.domain.util.Constants
+import com.dan.socialnetwork.presentation.util.Constants
 import com.dan.socialnetwork.presentation.util.compose.text.ErrorText
 
 @Composable

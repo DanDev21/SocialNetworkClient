@@ -2,8 +2,8 @@ package com.dan.socialnetwork.presentation.screen.main_feed.compose.component
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -11,50 +11,44 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.unit.Dp
-import androidx.compose.ui.unit.dp
 import com.dan.socialnetwork.R
 import com.dan.socialnetwork.domain.model.Post
 import com.dan.socialnetwork.presentation.ui.theme.Gray_on_sfc
-import com.dan.socialnetwork.presentation.ui.theme.Size_16
-import com.dan.socialnetwork.presentation.ui.theme.Size_8
-import com.dan.socialnetwork.presentation.util.compose.text.Description
+import com.dan.socialnetwork.presentation.util.Constants
+import com.dan.socialnetwork.presentation.util.compose.text.FoldableText
 
 @Composable
 fun Post(
     post: Post,
-    profilePictureSize: Dp = 56.dp
+    onClick: () -> Unit,
 ) {
     Box(
+        contentAlignment = Alignment.Center,
         modifier = Modifier
             .fillMaxWidth()
-            .padding(Size_16),
-        contentAlignment = Alignment.Center,
+            .padding(all = Constants.Size.MEDIUM),
     ) {
         Column(
             modifier = Modifier
                 .fillMaxWidth()
-                .offset(
-                    y = profilePictureSize / 2f
-                )
                 .clip(MaterialTheme.shapes.small)
-                .background(Gray_on_sfc)
+                .clickable(onClick = onClick),
+            horizontalAlignment = Alignment.CenterHorizontally,
         ) {
             Image(
                 painter = painterResource(R.drawable.profile_picture),
                 contentDescription = stringResource(R.string.description_post_image),
+                modifier = Modifier
+                    .fillMaxWidth()
             )
             
             Column(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .clip(MaterialTheme.shapes.medium)
-                    .padding(
-                        top = Size_8,
-                        start = Size_16,
-                        end = Size_16,
-                        bottom = Size_16
-                    )
+                    .background(Gray_on_sfc)
+                    .padding(all = Constants.Size.SMALL),
+                verticalArrangement = Arrangement.Center,
+                horizontalAlignment = Alignment.CenterHorizontally,
             ) {
                 PostOptions(
                     username = "Dan",
@@ -66,11 +60,11 @@ fun Post(
                         .fillMaxWidth()
                 )
 
-                Description(
+                FoldableText(
                     text = post.description,
+                    modifier = Modifier
+                        .fillMaxWidth()
                 )
-
-                Spacer(modifier = Modifier.height(Size_8))
 
                 LikesComments(
                     likes = post.likes,
@@ -78,17 +72,9 @@ fun Post(
                     textStyle = MaterialTheme.typography.h3,
                     modifier = Modifier
                         .fillMaxWidth()
+                        .padding(all = Constants.Size.SMALL)
                 )
             }
         }
-        
-        Image(
-            painter = painterResource(R.drawable.profile_picture),
-            contentDescription = stringResource(R.string.description_profile_picture),
-            modifier = Modifier
-                .size(profilePictureSize)
-                .clip(CircleShape)
-                .align(Alignment.TopCenter)
-        )
     }
 }

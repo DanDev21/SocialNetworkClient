@@ -8,14 +8,15 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.input.KeyboardType
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.dan.socialnetwork.R
 import com.dan.socialnetwork.presentation.util.compose.text.Link
 import com.dan.socialnetwork.presentation.screen.signup.viewmodel.SignUpViewModel
-import com.dan.socialnetwork.presentation.ui.theme.Size_16
-import com.dan.socialnetwork.presentation.ui.theme.Size_24
+import com.dan.socialnetwork.presentation.util.Constants
 import com.dan.socialnetwork.presentation.util.Screen
+import com.dan.socialnetwork.presentation.util.compose.spacer.vertical.DefaultMediumSpacerV
 import com.dan.socialnetwork.presentation.util.compose.text_field.PasswordTextField
 import com.dan.socialnetwork.presentation.util.compose.text_field.StandardTextField
 
@@ -27,15 +28,15 @@ fun SignUpScreen(
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .padding(Size_24)
+            .padding(all = Constants.Size.LARGE)
             .padding(
-                bottom = Size_24
+                bottom = Constants.Size.LARGE
             )
     ) {
         Column(
             modifier= Modifier
                 .fillMaxSize()
-                .padding(Size_24),
+                .padding(all = Constants.Size.LARGE),
             verticalArrangement = Arrangement.Center
         ) {
             Text(
@@ -44,16 +45,17 @@ fun SignUpScreen(
                 color = MaterialTheme.colors.onBackground,
             )
 
-            Spacer(modifier = Modifier.height(Size_16))
+            DefaultMediumSpacerV()
 
             StandardTextField(
                 text = viewModel.email.value,
                 hint = stringResource(R.string.hint_email),
                 onValueChange = viewModel::setEmail,
+                keyBoardType = KeyboardType.Email,
                 errorMessage = viewModel.emailErrorMessage.value
             )
 
-            Spacer(modifier = Modifier.height(Size_16))
+            DefaultMediumSpacerV()
 
             StandardTextField(
                 text = viewModel.username.value,
@@ -62,7 +64,7 @@ fun SignUpScreen(
                 errorMessage = viewModel.usernameErrorMessage.value
             )
 
-            Spacer(modifier = Modifier.height(Size_16))
+            DefaultMediumSpacerV()
 
             PasswordTextField(
                 text = viewModel.password.value,
@@ -72,7 +74,7 @@ fun SignUpScreen(
                 errorMessage = viewModel.passwordErrorMessage.value
             )
 
-            Spacer(modifier = Modifier.height(Size_16))
+            DefaultMediumSpacerV()
 
             PasswordTextField(
                 text = viewModel.passwordConfirmation.value,
@@ -83,7 +85,7 @@ fun SignUpScreen(
                 errorMessage = viewModel.passwordErrorMessage.value
             )
 
-            Spacer(modifier = Modifier.height(Size_16))
+            DefaultMediumSpacerV()
 
             Button(
                 modifier = Modifier

@@ -16,7 +16,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavController
 import com.dan.socialnetwork.R
-import com.dan.socialnetwork.domain.util.Constants
+import com.dan.socialnetwork.presentation.util.Constants
 import com.dan.socialnetwork.presentation.util.Screen
 import com.dan.socialnetwork.presentation.util.extension.navigate
 import kotlinx.coroutines.CoroutineDispatcher
@@ -44,7 +44,7 @@ fun SplashScreen(
                 scale.animateTo(
                     targetValue = 1f,
                     animationSpec = tween(
-                        durationMillis = 500,
+                        durationMillis = Constants.Time.SPLASH_SCREEN_ANIMATION,
                         easing = {
                             overshootInterpolator.getInterpolation(it)
                         }

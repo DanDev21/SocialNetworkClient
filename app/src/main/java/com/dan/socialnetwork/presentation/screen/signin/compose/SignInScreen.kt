@@ -8,14 +8,15 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.input.KeyboardType
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.dan.socialnetwork.R
 import com.dan.socialnetwork.presentation.util.compose.text.Link
 import com.dan.socialnetwork.presentation.screen.signin.viewmodel.SignInViewModel
-import com.dan.socialnetwork.presentation.ui.theme.Size_16
-import com.dan.socialnetwork.presentation.ui.theme.Size_24
+import com.dan.socialnetwork.presentation.util.Constants
 import com.dan.socialnetwork.presentation.util.Screen
+import com.dan.socialnetwork.presentation.util.compose.spacer.vertical.DefaultMediumSpacerV
 import com.dan.socialnetwork.presentation.util.compose.text_field.PasswordTextField
 import com.dan.socialnetwork.presentation.util.compose.text_field.StandardTextField
 import com.dan.socialnetwork.presentation.util.extension.navigate
@@ -28,9 +29,9 @@ fun SignInScreen(
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .padding(Size_24)
+            .padding(all = Constants.Size.LARGE)
             .padding(
-                bottom = Size_24
+                bottom = Constants.Size.LARGE
             )
     ) {
         Column(
@@ -43,14 +44,19 @@ fun SignInScreen(
                 style = MaterialTheme.typography.h1,
                 color = MaterialTheme.colors.onBackground,
             )
-            Spacer(modifier = Modifier.height(Size_16))
+
+            DefaultMediumSpacerV()
+
             StandardTextField(
                 text = viewModel.username.value,
-                hint = stringResource(R.string.hint_username),
+                hint = stringResource(R.string.hint_username_or_email),
+                keyBoardType = KeyboardType.Email,
                 onValueChange = viewModel::setUsername,
                 errorMessage = viewModel.usernameErrorMessage.value
             )
-            Spacer(modifier = Modifier.height(Size_16))
+
+            DefaultMediumSpacerV()
+
             PasswordTextField(
                 text = viewModel.password.value,
                 onValueChange = viewModel::setPassword,
@@ -58,7 +64,9 @@ fun SignInScreen(
                 onTogglePasswordVisibility = viewModel::setShowPassword,
                 errorMessage = viewModel.passwordErrorMessage.value
             )
-            Spacer(modifier = Modifier.height(Size_16))
+
+            DefaultMediumSpacerV()
+
             Button(
                 modifier = Modifier
                     .align(Alignment.End),

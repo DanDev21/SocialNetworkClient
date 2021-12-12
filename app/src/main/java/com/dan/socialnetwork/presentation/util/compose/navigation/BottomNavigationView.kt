@@ -41,7 +41,9 @@ fun BottomNavigationView(
                         enabled = item.route != Screen.Empty.route,
                         alerts = item.alerts
                     ) {
-                        navController.navigate(item.route)
+                        if (item.route != navController.currentDestination?.route) {
+                            navController.navigate(item.route)
+                        }
                     }
                 }
             }
