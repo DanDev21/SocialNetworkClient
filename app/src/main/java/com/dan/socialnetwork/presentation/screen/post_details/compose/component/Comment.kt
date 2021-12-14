@@ -14,7 +14,7 @@ import com.dan.socialnetwork.domain.model.Comment
 import com.dan.socialnetwork.presentation.screen.main_feed.compose.component.UserProfileLink
 import com.dan.socialnetwork.presentation.util.Constants
 import com.dan.socialnetwork.presentation.util.compose.button.LikeButton
-import com.dan.socialnetwork.presentation.util.compose.spacer.horizontal.DefaultSmallSpacerH
+import com.dan.socialnetwork.presentation.util.compose.spacer.DefaultSmallSpacerH
 import com.dan.socialnetwork.presentation.util.compose.text.FoldableText
 
 @Composable
@@ -44,6 +44,7 @@ fun Comment(
                 horizontalArrangement = Arrangement.SpaceBetween,
                 verticalAlignment = Alignment.CenterVertically
             ) {
+
                 UserProfileLink(
                     username = comment.username,
                     imageUrl = "",

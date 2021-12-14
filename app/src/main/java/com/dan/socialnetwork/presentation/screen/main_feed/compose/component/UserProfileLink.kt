@@ -15,7 +15,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import com.dan.socialnetwork.domain.util.StringUtil
 import com.dan.socialnetwork.presentation.util.Constants
-import com.dan.socialnetwork.presentation.util.compose.spacer.horizontal.DefaultSmallSpacerH
+import com.dan.socialnetwork.presentation.util.compose.spacer.DefaultSmallSpacerH
 
 @Composable
 fun UserProfileLink(
@@ -35,12 +35,12 @@ fun UserProfileLink(
                 vertical = Constants.Size.EXTRA_SMALL,
                 horizontal = Constants.Size.SMALL
             ),
+        horizontalArrangement = horizontalArrangement,
         verticalAlignment = Alignment.CenterVertically,
-        horizontalArrangement = horizontalArrangement
     ) {
         ProfilePicture(
             imageUrl = "",
-            imageSize = imageSize
+            imageSize = imageSize,
         )
         
         DefaultSmallSpacerH()

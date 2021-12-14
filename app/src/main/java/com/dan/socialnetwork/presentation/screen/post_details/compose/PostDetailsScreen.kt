@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.painterResource
@@ -15,7 +16,7 @@ import com.dan.socialnetwork.domain.model.Post
 import com.dan.socialnetwork.presentation.screen.main_feed.compose.component.UserProfileLink
 import com.dan.socialnetwork.presentation.screen.post_details.compose.component.Comment
 import com.dan.socialnetwork.presentation.util.Constants
-import com.dan.socialnetwork.presentation.util.compose.spacer.vertical.DefaultMediumSpacerV
+import com.dan.socialnetwork.presentation.util.compose.spacer.*
 import com.dan.socialnetwork.presentation.util.compose.text.FoldableText
 
 @Composable
@@ -32,41 +33,41 @@ fun PostDetailsScreen(
                 .fillMaxSize()
         ) {
             item {
-                DefaultMediumSpacerV()
-
-                Image(
-                    painter = painterResource(R.drawable.profile_picture),
-                    contentDescription = stringResource(R.string.description_post_image),
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(
-                            horizontal = Constants.Size.MEDIUM,
-                            vertical = Constants.Size.SMALL
-                        )
-                        .clip(MaterialTheme.shapes.small),
-                )
-
-                FoldableText(
-                    text = post.description,
+                Column(
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(
                             horizontal = Constants.Size.LARGE,
                             vertical = Constants.Size.SMALL
-                        )
-                )
-
-                UserProfileLink(
-                    username = post.username,
-                    imageUrl = "",
-                    horizontalArrangement = Arrangement.Center,
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(
-                            horizontal = Constants.Size.LARGE
                         ),
-                    onClick = {}
-                )
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
+                    DefaultMediumSpacerV()
+
+                    Image(
+                        painter = painterResource(R.drawable.profile_picture),
+                        contentDescription = stringResource(R.string.description_post_image),
+                        modifier = Modifier
+                            .clip(MaterialTheme.shapes.small),
+                    )
+
+                    DefaultSmallSpacerV()
+
+                    UserProfileLink(
+                        username = post.username,
+                        imageUrl = "",
+                        horizontalArrangement = Arrangement.Center,
+                        modifier = Modifier
+                            .fillMaxWidth(),
+                        onClick = {}
+                    )
+
+                    DefaultLargeSpacerV()
+
+                    FoldableText(text = post.description)
+
+                    DefaultMediumSpacerV()
+                }
             }
 
             items(20) {

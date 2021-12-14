@@ -34,7 +34,7 @@ object Constants {
 
         object Image {
             val DEFAULT = 30.dp
-            val PROFILE_PICTURE = 56.dp
+            val PROFILE_PICTURE = 64.dp
             val PROFILE_PICTURE_EXTRA_SMALL = 24.dp
         }
 
@@ -44,6 +44,13 @@ object Constants {
             val NORMAL = 14.sp
             val MEDIUM = 16.sp
             val LARGE = 24.sp
+        }
+    }
+
+    object Width {
+
+        object Border {
+            val PROFILE_PICTURE = 2.dp
         }
     }
 }

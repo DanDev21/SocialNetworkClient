@@ -14,7 +14,7 @@ import androidx.compose.ui.unit.Dp
 import com.dan.socialnetwork.R
 import com.dan.socialnetwork.presentation.util.Constants
 import com.dan.socialnetwork.presentation.util.compose.button.LikeButton
-import com.dan.socialnetwork.presentation.util.compose.spacer.horizontal.DefaultMediumSpacerH
+import com.dan.socialnetwork.presentation.util.compose.spacer.DefaultMediumSpacerH
 
 @Composable
 fun EngagementButtons(

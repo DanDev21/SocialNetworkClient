@@ -16,7 +16,7 @@ import com.dan.socialnetwork.presentation.util.compose.text.Link
 import com.dan.socialnetwork.presentation.screen.signup.viewmodel.SignUpViewModel
 import com.dan.socialnetwork.presentation.util.Constants
 import com.dan.socialnetwork.presentation.util.Screen
-import com.dan.socialnetwork.presentation.util.compose.spacer.vertical.DefaultMediumSpacerV
+import com.dan.socialnetwork.presentation.util.compose.spacer.*
 import com.dan.socialnetwork.presentation.util.compose.text_field.PasswordTextField
 import com.dan.socialnetwork.presentation.util.compose.text_field.StandardTextField
 
