@@ -1,22 +1,50 @@
 package com.dan.socialnetwork.presentation.screen.activity.compose
 
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material.Text
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
+import com.dan.socialnetwork.domain.model.Activity
+import com.dan.socialnetwork.presentation.screen.activity.compose.component.Item
+import com.dan.socialnetwork.presentation.screen.activity.viewmodel.ActivityViewModel
+import com.dan.socialnetwork.presentation.util.Constants
+import com.dan.socialnetwork.presentation.util.compose.spacer.DefaultMediumSpacerV
+import kotlin.random.Random
 
 @Composable
 fun ActivityScreen(
-    navController: NavController
+    navController: NavController,
+    viewModel: ActivityViewModel = hiltViewModel()
 ) {
-    Box(
+    Column(
         modifier = Modifier
-            .fillMaxSize(),
-        contentAlignment = Alignment.Center
+            .fillMaxSize()
     ) {
-        Text(text = "ActivityScreen")
+        LazyColumn(
+            modifier = Modifier
+                .fillMaxSize(),
+            contentPadding = PaddingValues(all = Constants.Size.MEDIUM)
+        ) {
+            items(20) {
+                Item(
+                    activity = Activity(
+                        username = "John",
+                        action = if (Random.nextInt(2) == 0) {
+                            Activity.Action.LikedPost
+                        } else  {
+                            Activity.Action.CommentedOnPost
+                        }
+                    )
+                )
+                DefaultMediumSpacerV()
+            }
+
+            item {
+                Spacer(modifier = Modifier.height(100.dp))
+            }
+        }
     }
 }

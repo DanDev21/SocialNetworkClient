@@ -13,7 +13,7 @@ object Constants {
 
     object Max {
         const val DESCRIPTION_LINES = 3
-        const val USERNAME_LENGTH = 12
+        const val USERNAME_LENGTH = 9
     }
 
     object Test {
@@ -50,7 +50,7 @@ object Constants {
     object Width {
 
         object Border {
-            val PROFILE_PICTURE = 2.dp
+            val PROFILE_PICTURE = (1.5).dp
         }
     }
 }

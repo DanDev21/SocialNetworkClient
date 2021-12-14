@@ -38,4 +38,14 @@
     <string name="x_comments">%d comments</string>
     <string name="read_more">Read more</string>
     <string name="empty" />
+
+        actions
+    <string name="liked">liked</string>
+    <string name="commented_on">commented on</string>
+    <string name="started_following_you">started following you</string>
+
+        targets
+    <string name="your_post">your post</string>
+    <string name="your_comment">your comment</string>
+
 </resources>

@@ -11,9 +11,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.Dp
-import com.dan.socialnetwork.domain.util.StringUtil
+import com.dan.socialnetwork.presentation.util.StringUtil
 import com.dan.socialnetwork.presentation.util.Constants
 import com.dan.socialnetwork.presentation.util.compose.spacer.DefaultSmallSpacerH
 
@@ -46,10 +46,12 @@ fun UserProfileLink(
         DefaultSmallSpacerH()
 
         Text(
-            text = "@${StringUtil.crop(username)}",
+            text = StringUtil
+                .format(username)
+                .asUsername()
+                .get(),
             style = textStyle,
-            maxLines = 1,
-            overflow = TextOverflow.Ellipsis
+            textAlign = TextAlign.Center
         )
     }
 }
