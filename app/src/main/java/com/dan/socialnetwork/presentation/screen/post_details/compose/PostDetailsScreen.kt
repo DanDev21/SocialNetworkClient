@@ -88,6 +88,10 @@ fun PostDetailsScreen(
                     like = {},
                 )
             }
+
+            item {
+                DefaultEndSpacerV()
+            }
         }
     }
 }

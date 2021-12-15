@@ -4,13 +4,13 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.dan.socialnetwork.domain.model.Activity
 import com.dan.socialnetwork.presentation.screen.activity.compose.component.Item
 import com.dan.socialnetwork.presentation.screen.activity.viewmodel.ActivityViewModel
 import com.dan.socialnetwork.presentation.util.Constants
+import com.dan.socialnetwork.presentation.util.compose.spacer.DefaultEndSpacerV
 import com.dan.socialnetwork.presentation.util.compose.spacer.DefaultMediumSpacerV
 import kotlin.random.Random
 
@@ -43,7 +43,7 @@ fun ActivityScreen(
             }
 
             item {
-                Spacer(modifier = Modifier.height(100.dp))
+                DefaultEndSpacerV()
             }
         }
     }

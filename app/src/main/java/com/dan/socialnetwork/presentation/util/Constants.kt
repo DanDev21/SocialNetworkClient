@@ -36,6 +36,7 @@ object Constants {
             val DEFAULT = 30.dp
             val PROFILE_PICTURE = 64.dp
             val PROFILE_PICTURE_EXTRA_SMALL = 24.dp
+            val PROFILE_PICTURE_LARGE = 144.dp
         }
 
         object Text {
