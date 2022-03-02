@@ -30,7 +30,9 @@ class MainActivity : ComponentActivity() {
                         .fillMaxSize()
                 ) {
                     val navController = rememberNavController()
-                    val navBackStackEntry by navController.currentBackStackEntryAsState()
+                    val navBackStackEntry by navController
+                        .currentBackStackEntryAsState()
+
                     MainScaffold(
                         navController = navController,
                         showBottomNavigationView = this.showBottomNavigationView(navBackStackEntry),
