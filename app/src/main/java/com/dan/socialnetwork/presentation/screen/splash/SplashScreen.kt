@@ -16,9 +16,9 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavController
 import com.dan.socialnetwork.R
-import com.dan.socialnetwork.presentation.util.Constants
-import com.dan.socialnetwork.presentation.util.Screen
-import com.dan.socialnetwork.presentation.util.extension.navigate
+import com.dan.socialnetwork.util.Time
+import com.dan.socialnetwork.core.presentation.Screen
+import com.dan.socialnetwork.extension.navigate
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
@@ -44,13 +44,13 @@ fun SplashScreen(
                 scale.animateTo(
                     targetValue = 1f,
                     animationSpec = tween(
-                        durationMillis = Constants.Time.SPLASH_SCREEN_ANIMATION,
+                        durationMillis = Time.SPLASH_SCREEN_ANIMATION,
                         easing = {
                             overshootInterpolator.getInterpolation(it)
                         }
                     )
                 )
-                delay(Constants.Time.SPLASH_SCREEN)
+                delay(Time.SPLASH_SCREEN)
                 navController.navigate(Screen.SignIn.route, true)
             }
         }

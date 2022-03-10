@@ -12,10 +12,10 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import com.dan.socialnetwork.R
-import com.dan.socialnetwork.domain.model.Post
-import com.dan.socialnetwork.presentation.ui.theme.Gray_on_sfc
-import com.dan.socialnetwork.presentation.util.Constants
-import com.dan.socialnetwork.presentation.util.compose.text.FoldableText
+import com.dan.socialnetwork.core.domain.model.Post
+import com.dan.socialnetwork.core.presentation.Color
+import com.dan.socialnetwork.core.presentation.Size
+import com.dan.socialnetwork.core.presentation.text.FoldableText
 
 @Composable
 fun Post(
@@ -26,7 +26,7 @@ fun Post(
         contentAlignment = Alignment.Center,
         modifier = Modifier
             .fillMaxWidth()
-            .padding(all = Constants.Size.MEDIUM),
+            .padding(all = Size.MEDIUM),
     ) {
         Column(
             modifier = Modifier
@@ -45,8 +45,8 @@ fun Post(
             Column(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .background(Gray_on_sfc)
-                    .padding(all = Constants.Size.SMALL),
+                    .background(Color.On.Surface.Gray)
+                    .padding(all = Size.SMALL),
                 verticalArrangement = Arrangement.Center,
                 horizontalAlignment = Alignment.CenterHorizontally,
             ) {
@@ -72,7 +72,7 @@ fun Post(
                     textStyle = MaterialTheme.typography.h3,
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(all = Constants.Size.SMALL)
+                        .padding(all = Size.SMALL)
                 )
             }
         }

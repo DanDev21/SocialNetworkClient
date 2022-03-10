@@ -3,14 +3,14 @@ package com.dan.socialnetwork.presentation.screen.main_feed.compose
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavController
 import com.dan.socialnetwork.presentation.screen.main_feed.compose.component.Post
-import com.dan.socialnetwork.presentation.util.Screen
+import com.dan.socialnetwork.core.presentation.Screen
 
 @Composable
 fun MainFeedScreen(
     navController: NavController,
 ) {
     Post(
-        post = com.dan.socialnetwork.domain.model.Post(
+        post = com.dan.socialnetwork.core.domain.model.Post(
             "Dan",
             "",
             "",

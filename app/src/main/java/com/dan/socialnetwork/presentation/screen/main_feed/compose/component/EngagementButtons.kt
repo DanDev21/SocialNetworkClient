@@ -12,14 +12,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.Dp
 import com.dan.socialnetwork.R
-import com.dan.socialnetwork.presentation.util.Constants
-import com.dan.socialnetwork.presentation.util.compose.button.LikeButton
-import com.dan.socialnetwork.presentation.util.compose.spacer.DefaultMediumSpacerH
+import com.dan.socialnetwork.core.presentation.Size
+import com.dan.socialnetwork.core.presentation.button.LikeButton
+import com.dan.socialnetwork.core.presentation.spacer.DefaultMediumSpacerH
 
 @Composable
 fun EngagementButtons(
     modifier: Modifier = Modifier,
-    iconsSize: Dp = Constants.Size.Image.DEFAULT,
+    iconsSize: Dp = Size.Image.DEFAULT,
     isLiked: Boolean = false,
     like: (Boolean) -> Unit,
     comment: () -> Unit,

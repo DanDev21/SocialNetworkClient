@@ -6,12 +6,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
-import com.dan.socialnetwork.domain.model.Activity
+import com.dan.socialnetwork.core.domain.model.Activity
+import com.dan.socialnetwork.core.presentation.Size
 import com.dan.socialnetwork.presentation.screen.activity.compose.component.Item
 import com.dan.socialnetwork.presentation.screen.activity.viewmodel.ActivityViewModel
-import com.dan.socialnetwork.presentation.util.Constants
-import com.dan.socialnetwork.presentation.util.compose.spacer.DefaultEndSpacerV
-import com.dan.socialnetwork.presentation.util.compose.spacer.DefaultMediumSpacerV
+import com.dan.socialnetwork.core.presentation.spacer.DefaultEndSpacerV
+import com.dan.socialnetwork.core.presentation.spacer.DefaultMediumSpacerV
 import kotlin.random.Random
 
 @Composable
@@ -26,7 +26,7 @@ fun ActivityScreen(
         LazyColumn(
             modifier = Modifier
                 .fillMaxSize(),
-            contentPadding = PaddingValues(all = Constants.Size.MEDIUM)
+            contentPadding = PaddingValues(all = Size.MEDIUM)
         ) {
             items(20) {
                 Item(

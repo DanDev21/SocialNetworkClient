@@ -12,12 +12,12 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.navigation.NavController
 import com.dan.socialnetwork.R
-import com.dan.socialnetwork.domain.model.Post
+import com.dan.socialnetwork.core.domain.model.Post
+import com.dan.socialnetwork.core.presentation.Size
 import com.dan.socialnetwork.presentation.screen.main_feed.compose.component.UserProfileLink
 import com.dan.socialnetwork.presentation.screen.post_details.compose.component.Comment
-import com.dan.socialnetwork.presentation.util.Constants
-import com.dan.socialnetwork.presentation.util.compose.spacer.*
-import com.dan.socialnetwork.presentation.util.compose.text.FoldableText
+import com.dan.socialnetwork.core.presentation.spacer.*
+import com.dan.socialnetwork.core.presentation.text.FoldableText
 
 @Composable
 fun PostDetailsScreen(
@@ -37,8 +37,8 @@ fun PostDetailsScreen(
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(
-                            horizontal = Constants.Size.LARGE,
-                            vertical = Constants.Size.SMALL
+                            horizontal = Size.LARGE,
+                            vertical = Size.SMALL
                         ),
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
@@ -72,7 +72,7 @@ fun PostDetailsScreen(
 
             items(20) {
                 Comment(
-                    comment = com.dan.socialnetwork.domain.model.Comment(
+                    comment = com.dan.socialnetwork.core.domain.model.Comment(
                         username = "Dan Sabau $it",
                         text = "askdniad adsniadm adiadkmaidaijdiadiasjidjasjdiaa\nsk akdmadasd" +
                                 "asdaisdij asdjias aisdjiajda\n" +
@@ -81,8 +81,8 @@ fun PostDetailsScreen(
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(
-                            horizontal = Constants.Size.LARGE,
-                            vertical = Constants.Size.SMALL
+                            horizontal = Size.LARGE,
+                            vertical = Size.SMALL
                         ),
                     onClick = {},
                     like = {},

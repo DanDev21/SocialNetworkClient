@@ -13,9 +13,9 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.Dp
-import com.dan.socialnetwork.presentation.util.StringUtil
-import com.dan.socialnetwork.presentation.util.Constants
-import com.dan.socialnetwork.presentation.util.compose.spacer.DefaultSmallSpacerH
+import com.dan.socialnetwork.core.presentation.Size
+import com.dan.socialnetwork.util.StringUtil
+import com.dan.socialnetwork.core.presentation.spacer.DefaultSmallSpacerH
 
 @Composable
 fun UserProfileLink(
@@ -23,7 +23,7 @@ fun UserProfileLink(
     username: String,
     textStyle: TextStyle = MaterialTheme.typography.h3,
     imageUrl: String,
-    imageSize: Dp = Constants.Size.Image.PROFILE_PICTURE_EXTRA_SMALL,
+    imageSize: Dp = Size.Image.PROFILE_PICTURE_EXTRA_SMALL,
     horizontalArrangement: Arrangement.Horizontal = Arrangement.Start,
     onClick: () -> Unit
 ) {
@@ -32,8 +32,8 @@ fun UserProfileLink(
             .clip(MaterialTheme.shapes.medium)
             .clickable(onClick = onClick)
             .padding(
-                vertical = Constants.Size.EXTRA_SMALL,
-                horizontal = Constants.Size.SMALL
+                vertical = Size.EXTRA_SMALL,
+                horizontal = Size.SMALL
             ),
         horizontalArrangement = horizontalArrangement,
         verticalAlignment = Alignment.CenterVertically,

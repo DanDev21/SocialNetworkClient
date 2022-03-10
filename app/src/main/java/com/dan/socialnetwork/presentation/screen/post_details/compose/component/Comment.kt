@@ -10,12 +10,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.dan.socialnetwork.R
-import com.dan.socialnetwork.domain.model.Comment
+import com.dan.socialnetwork.core.domain.model.Comment
+import com.dan.socialnetwork.core.presentation.Size
 import com.dan.socialnetwork.presentation.screen.main_feed.compose.component.UserProfileLink
-import com.dan.socialnetwork.presentation.util.Constants
-import com.dan.socialnetwork.presentation.util.compose.button.LikeButton
-import com.dan.socialnetwork.presentation.util.compose.spacer.DefaultSmallSpacerH
-import com.dan.socialnetwork.presentation.util.compose.text.FoldableText
+import com.dan.socialnetwork.core.presentation.button.LikeButton
+import com.dan.socialnetwork.core.presentation.spacer.DefaultSmallSpacerH
+import com.dan.socialnetwork.core.presentation.text.FoldableText
 
 @Composable
 fun Comment(
@@ -34,8 +34,8 @@ fun Comment(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(
-                    horizontal = Constants.Size.MEDIUM,
-                    vertical = Constants.Size.SMALL
+                    horizontal = Size.MEDIUM,
+                    vertical = Size.SMALL
                 )
         ) {
             Row(
@@ -70,7 +70,7 @@ fun Comment(
                 DefaultSmallSpacerH()
                 
                 LikeButton(
-                    iconsSize = Constants.Size.Image.DEFAULT,
+                    iconsSize = Size.Image.DEFAULT,
                     isLiked = false,
                     onClick = like,
                     modifier = Modifier
@@ -86,7 +86,7 @@ fun Comment(
                 style = MaterialTheme.typography.body2,
                 color = MaterialTheme.colors.onBackground,
                 modifier = Modifier
-                    .padding(all = Constants.Size.SMALL)
+                    .padding(all = Size.SMALL)
             )
         }
     }

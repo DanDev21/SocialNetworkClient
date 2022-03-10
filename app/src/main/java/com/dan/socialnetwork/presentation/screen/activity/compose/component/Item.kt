@@ -18,10 +18,10 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.withStyle
 import com.dan.socialnetwork.R
-import com.dan.socialnetwork.domain.model.Activity
-import com.dan.socialnetwork.presentation.util.StringUtil
-import com.dan.socialnetwork.presentation.util.Constants
-import com.dan.socialnetwork.presentation.util.DateFormatter
+import com.dan.socialnetwork.core.domain.model.Activity
+import com.dan.socialnetwork.core.presentation.Size
+import com.dan.socialnetwork.util.StringUtil
+import com.dan.socialnetwork.util.DateFormatter
 
 @Composable
 fun Item(
@@ -31,13 +31,13 @@ fun Item(
     Card(
         shape = MaterialTheme.shapes.small,
         backgroundColor = MaterialTheme.colors.onSurface,
-        elevation = Constants.Size.EXTRA_SMALL,
+        elevation = Size.EXTRA_SMALL,
         modifier = modifier
     ) {
         Row(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(Constants.Size.SMALL),
+                .padding(Size.SMALL),
             horizontalArrangement = Arrangement.SpaceBetween,
             verticalAlignment = Alignment.CenterVertically
         ) {
@@ -63,12 +63,12 @@ fun Item(
                     }
                     append(".")
                 },
-                fontSize = Constants.Size.Text.SMALL
+                fontSize = Size.Text.SMALL
             )
             Text(
                 text = DateFormatter.format(activity.timestamp, "MMM dd, HH:mm"),
                 textAlign = TextAlign.Right,
-                fontSize = Constants.Size.Text.SMALL
+                fontSize = Size.Text.SMALL
             )
         }
     }
