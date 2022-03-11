@@ -1,18 +1,17 @@
-package com.dan.socialnetwork.feature_auth.presentation.signin
+package com.dan.socialnetwork.feature_authentication.presentation.signin
 
 import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.dan.socialnetwork.R
-import com.dan.socialnetwork.core.data.dto.response.SingletonResponse
 import com.dan.socialnetwork.core.domain.state.PasswordTextFieldState
 import com.dan.socialnetwork.core.domain.state.StandardTextFieldState
-import com.dan.socialnetwork.feature_auth.data.validation.SignInException
-import com.dan.socialnetwork.feature_auth.data.validation.SignInException.EmailOrUsernameException
-import com.dan.socialnetwork.feature_auth.data.validation.SignInException.PasswordException
-import com.dan.socialnetwork.feature_auth.use_case.SignInUseCase
-import com.dan.socialnetwork.util.Result
+import com.dan.socialnetwork.feature_authentication.data.validation.SignInException
+import com.dan.socialnetwork.feature_authentication.data.validation.SignInException.EmailOrUsernameException
+import com.dan.socialnetwork.feature_authentication.data.validation.SignInException.PasswordException
+import com.dan.socialnetwork.feature_authentication.domain.SignInUseCase
+import com.dan.socialnetwork.core.data.dto.Result
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.asSharedFlow
@@ -33,7 +32,7 @@ class SignInViewModel @Inject constructor(
     private val _signingInState = mutableStateOf(false)
     val signingIn: State<Boolean> = _signingInState
 
-    private val _loginResultFlow = MutableSharedFlow<Result<SingletonResponse<String>>>()
+    private val _loginResultFlow = MutableSharedFlow<Result<String>>()
     val loginResultFlow = _loginResultFlow.asSharedFlow()
 
     fun signIn() = viewModelScope.launch {

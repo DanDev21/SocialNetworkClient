@@ -9,12 +9,12 @@ import com.dan.socialnetwork.core.domain.model.Post
 import com.dan.socialnetwork.presentation.screen.activity.compose.ActivityScreen
 import com.dan.socialnetwork.presentation.screen.chats.compose.ChatsScreen
 import com.dan.socialnetwork.presentation.screen.create_post.compose.CreatePostScreen
-import com.dan.socialnetwork.feature_auth.presentation.signin.SignInScreen
+import com.dan.socialnetwork.feature_authentication.presentation.signin.SignInScreen
 import com.dan.socialnetwork.presentation.screen.main_feed.compose.MainFeedScreen
 import com.dan.socialnetwork.presentation.screen.post_details.compose.PostDetailsScreen
 import com.dan.socialnetwork.presentation.screen.profile.compose.ProfileScreen
-import com.dan.socialnetwork.feature_auth.presentation.signup.SignUpScreen
-import com.dan.socialnetwork.presentation.screen.splash.SplashScreen
+import com.dan.socialnetwork.feature_authentication.presentation.signup.SignUpScreen
+import com.dan.socialnetwork.feature_authentication.presentation.splash.SplashScreen
 import com.dan.socialnetwork.core.presentation.Screen
 
 @Composable

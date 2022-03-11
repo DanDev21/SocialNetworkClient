@@ -1,7 +1,6 @@
 package com.dan.socialnetwork.util
 
 object Time {
-    const val SPLASH_SCREEN = 300L
     const val SPLASH_SCREEN_ANIMATION = 350
     const val BOTTOM_NAVIGATION_ITEM_LINE_ANIMATION = 250
 }
@@ -52,6 +51,7 @@ object Routes {
 
         const val SIGN_UP = "$USER/sign_up"
         const val SIGN_IN = "$USER/sign_in"
+        const val AUTHENTICATE = "$USER/authenticate"
         const val GET_PROFILE = "$USER/get_profile/{${RouteParams.ID}}"
         const val UPDATE = "$USER/update"
         const val UPDATE_PROFILE_PICTURE = "$USER/update_profile_image"

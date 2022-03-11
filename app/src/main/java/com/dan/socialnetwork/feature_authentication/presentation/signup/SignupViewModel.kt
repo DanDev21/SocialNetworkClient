@@ -1,4 +1,4 @@
-package com.dan.socialnetwork.feature_auth.presentation.signup
+package com.dan.socialnetwork.feature_authentication.presentation.signup
 
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.State
@@ -7,11 +7,11 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.dan.socialnetwork.R
 import com.dan.socialnetwork.core.domain.state.StandardTextFieldState
-import com.dan.socialnetwork.feature_auth.data.dto.SignupForm
-import com.dan.socialnetwork.feature_auth.data.validation.SignupException
-import com.dan.socialnetwork.feature_auth.data.validation.SignupException.*
-import com.dan.socialnetwork.feature_auth.use_case.SignupUseCase
-import com.dan.socialnetwork.util.Result
+import com.dan.socialnetwork.feature_authentication.data.dto.SignupForm
+import com.dan.socialnetwork.feature_authentication.data.validation.SignupException
+import com.dan.socialnetwork.feature_authentication.data.validation.SignupException.*
+import com.dan.socialnetwork.feature_authentication.domain.SignupUseCase
+import com.dan.socialnetwork.core.data.dto.Result
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.asSharedFlow

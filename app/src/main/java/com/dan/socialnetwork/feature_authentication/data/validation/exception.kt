@@ -1,4 +1,4 @@
-package com.dan.socialnetwork.feature_auth.data.validation
+package com.dan.socialnetwork.feature_authentication.data.validation
 
 import androidx.annotation.StringRes
 import com.dan.socialnetwork.util.AppException

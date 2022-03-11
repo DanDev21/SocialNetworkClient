@@ -1,4 +1,4 @@
-package com.dan.socialnetwork.feature_auth.data.dto
+package com.dan.socialnetwork.feature_authentication.data.dto
 
 data class SignupForm(
     val email: String,

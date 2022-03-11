@@ -2,8 +2,8 @@ package com.dan.socialnetwork.core
 
 import android.app.Application
 import android.content.Context
-import android.content.SharedPreferences
 import com.dan.socialnetwork.util.SharedPrefKey
+import com.dan.socialnetwork.util.SharedPreferencesManager
 import com.google.gson.Gson
 import dagger.Module
 import dagger.Provides
@@ -23,23 +23,24 @@ object CoreModule {
 
     @Provides
     @Singleton
-    fun providesSharedPreferences(app: Application): SharedPreferences =
-        app.getSharedPreferences(
-            SharedPrefKey.SHARED_PREFERENCES_MAIN_INSTANCE,
-            Context.MODE_PRIVATE
+    fun providesSharedPreferencesManager(app: Application) =
+        SharedPreferencesManager(
+            app.getSharedPreferences(
+                SharedPrefKey.SHARED_PREFERENCES_MAIN_INSTANCE,
+                Context.MODE_PRIVATE
+            )
         )
 
     @Provides
     @Singleton
-    fun providesOkHttpClient(sharedPreferences: SharedPreferences): OkHttpClient =
+    fun providesOkHttpClient(manager: SharedPreferencesManager): OkHttpClient =
         OkHttpClient.Builder()
             .addInterceptor {
-                val token = sharedPreferences.getString(SharedPrefKey.JWT, "")
-                val request =
-                    it.request()
-                        .newBuilder()
-                        .addHeader("Authorization", "Bearer $token")
-                        .build()
+                val token = manager.getAuthenticationToken()
+                val request = it.request()
+                    .newBuilder()
+                    .addHeader("Authorization", "Bearer $token")
+                    .build()
                 it.proceed(request)
             }
             .addInterceptor(

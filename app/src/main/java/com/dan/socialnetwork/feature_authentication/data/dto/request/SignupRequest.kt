@@ -1,4 +1,4 @@
-package com.dan.socialnetwork.feature_auth.data.dto.request
+package com.dan.socialnetwork.feature_authentication.data.dto.request
 
 data class SignupRequest(
     val email: String,

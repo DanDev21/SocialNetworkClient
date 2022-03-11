@@ -1,4 +1,4 @@
-package com.dan.socialnetwork.feature_auth.presentation.signin
+package com.dan.socialnetwork.feature_authentication.presentation.signin
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
@@ -21,7 +21,7 @@ import com.dan.socialnetwork.core.presentation.text_field.PasswordTextField
 import com.dan.socialnetwork.core.presentation.text_field.StandardTextField
 import com.dan.socialnetwork.extension.navigate
 import com.dan.socialnetwork.extension.showSnackBar
-import com.dan.socialnetwork.util.Result
+import com.dan.socialnetwork.core.data.dto.Result
 import kotlinx.coroutines.flow.collectLatest
 
 @Composable

@@ -1,9 +1,9 @@
-package com.dan.socialnetwork.feature_auth.data.validation
+package com.dan.socialnetwork.feature_authentication.data.validation
 
 import com.dan.socialnetwork.R
 import com.dan.socialnetwork.util.Length
-import com.dan.socialnetwork.feature_auth.data.dto.SignupForm
-import com.dan.socialnetwork.feature_auth.data.validation.SignupException.*
+import com.dan.socialnetwork.feature_authentication.data.dto.SignupForm
+import com.dan.socialnetwork.feature_authentication.data.validation.SignupException.*
 import com.dan.socialnetwork.util.StringUtil
 
 class SignupValidator {

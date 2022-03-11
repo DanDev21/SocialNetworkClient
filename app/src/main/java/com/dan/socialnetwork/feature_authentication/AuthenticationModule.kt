@@ -1,9 +1,10 @@
-package com.dan.socialnetwork.feature_auth
+package com.dan.socialnetwork.feature_authentication
 
-import android.content.SharedPreferences
-import com.dan.socialnetwork.feature_auth.data.AuthenticationApi
-import com.dan.socialnetwork.feature_auth.use_case.SignInUseCase
-import com.dan.socialnetwork.feature_auth.use_case.SignupUseCase
+import com.dan.socialnetwork.feature_authentication.data.AuthenticationApi
+import com.dan.socialnetwork.feature_authentication.domain.AuthenticationUseCase
+import com.dan.socialnetwork.feature_authentication.domain.SignInUseCase
+import com.dan.socialnetwork.feature_authentication.domain.SignupUseCase
+import com.dan.socialnetwork.util.SharedPreferencesManager
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -35,6 +36,11 @@ object AuthenticationModule {
     @Singleton
     fun providesSignInUseCase(
         api: AuthenticationApi,
-        sharedPreferences: SharedPreferences
-    ) = SignInUseCase(api, sharedPreferences)
+        manager: SharedPreferencesManager
+    ) = SignInUseCase(api, manager)
+
+    @Provides
+    @Singleton
+    fun providesAuthenticationUseCase(api: AuthenticationApi) =
+        AuthenticationUseCase(api)
 }
